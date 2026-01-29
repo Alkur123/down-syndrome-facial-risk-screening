@@ -1,0 +1,7 @@
+torch
+timm
+gradio
+pillow
+numpy
+opencv-python-headless
+huggingface-hub
