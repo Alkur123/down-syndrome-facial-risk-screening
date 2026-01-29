@@ -1,0 +1,29 @@
+body {
+	background-color: #bae0f3;
+}
+
+h4{
+	color: 4c6390;
+	font-family: 'Libre Baskerville';
+	font-size: 33px;
+}
+
+p {
+	font-family: 'arial';
+	font-size: 15px
+}
+
+img {
+	padding-left: 50px;
+	padding-right: 50 px;
+	height: 200px;
+	width: 200 px;
+}
+
+button {
+	padding: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 15px;
+	background-color: #008CBA;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head> 
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+		<title> Vinaya's project </title>
+	</head>
+
+	<body> 
+		<center><h4><b>Analysis and Detection of Down Syndrome in Children using Various Machine Learning Classification Techniques and Deep Convolutional Neural Networks</b></h4></center>
+		<p>Images of children with down syndrome</p>
+		<center>
+		<img src = "{{ url_for('static', filename='images/down_1.jpg') }}"/>
+		<img src = "{{ url_for('static', filename='images/down_2.jpg') }}"/>
+		<img src = "{{ url_for('static', filename='images/down_3.jpg') }}"/>
+		</center>
+
+		<p>Images of children without down syndrome</p>
+		<center>
+		<img src = "{{ url_for('static', filename='images/healty_1.jpg') }}"/>
+		<img src = "{{ url_for('static', filename='images/healty_2.jpg') }}"/>
+		<img src = "{{ url_for('static', filename='images/healty_3.jpg') }}"/>
+		</center>
+
+		
+		<br><br>
+		
+		
+		<form action = "{{ url_for('predict') }}" method = "post" enctype = "multipart/form-data">
+			<center>
+			<input type = "file" name = "file">
+			<button type = "submit" class = "btn btn-primary btn-block btn-large">Detect</button>
+			</center>
+			</form>
+		
+		<br><br>
+
+		{{ prediction_text }}
+		
+		
+	</body>
+
+</html>
