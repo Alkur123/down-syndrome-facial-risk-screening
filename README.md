@@ -49,19 +49,24 @@ The pipeline is designed for robustness and transparency, not just classificatio
 
 ```mermaid
 graph LR
-    A[Input Image] --> B{Pre-processing};
-    B --> C[Face Detection & Alignment\n(MTCNN)];
-    C --> D[Normalization];
-    D --> E[Model Ensemble];
+    A[Input Image] --> B[Pre-processing]
+    B --> C["Face Detection & Alignment (MTCNN)"]
+    C --> D[Normalization]
+    D --> E[Model Ensemble]
+
     subgraph Ensemble
-    E1[EfficientNet-B0]
-    E2[ResNet-18]
+        E1[EfficientNet-B0]
+        E2[ResNet-18]
     end
-    E --> E1 & E2;
-    E1 & E2 --> F[Probability Aggregation];
-    F --> G[Risk Assessment Output];
-    G --> H[Explainability\n(Grad-CAM)];
-    H --> I[Final Dashboard];
+
+    E --> E1
+    E --> E2
+    E1 --> F[Probability Aggregation]
+    E2 --> F
+
+    F --> G[Risk Assessment Output]
+    G --> H["Explainability (Grad-CAM)"]
+    H --> I[Final Dashboard]
 ```
 
 ## 4. Key Technical Features
@@ -144,5 +149,6 @@ Visit `http://localhost:7860` to access the research interface.
 ) &nbsp; | &nbsp; [**Read the Model Card**](MODEL_CARD.md)
 
 ---
+
 
 > 
